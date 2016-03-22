@@ -12,7 +12,7 @@
         }
 
         footer {
-            background: #000;
+            background: #444;
             color: #fff;
             text-align: center;
             line-height: 5em;
@@ -36,7 +36,7 @@
         nav {
             padding: 15px;
             position: relative;
-            background-color: #333;
+            background-color: #444;
         }
 
             nav > ul {
@@ -65,7 +65,10 @@
                     color: #fff;
                     text-decoration: none;
                 }
-
+        .disabled {
+            color:gray;
+        }
+        
         /*文章模块*/
         article {
             padding: 20px;
@@ -217,7 +220,7 @@
                 <li><a href="#article1">导航链接一</a> </li>
                 <li><a href="#article2">导航链接二</a> </li>
                 <li><a href="#article3">导航链接三</a> </li>
-                <li><a href="#article4">导航链接四</a> </li>
+                <li><a class="disabled" href="javascript:void(0)">导航链接四</a> </li>
             </ul>
         </nav>
     </header>
