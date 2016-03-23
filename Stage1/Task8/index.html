@@ -1,1 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>任务八：响应式网格（栅格化）布局</title>
+    <style type="text/css">
+        * {
+            box-sizing: border-box;
+        }
 
+        html, body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .wrapper {
+            box-sizing: border-box;
+            width: 100%;
+            padding: 10px;
+        }
+
+            .wrapper:after {
+                content: "";
+                display: block;
+                clear: both;
+            }
+
+            .wrapper > div {
+                float: left;
+                padding: 10px;
+            }
+
+        .block {
+            height: 50px;
+            background-color: #eee;
+            border: 1px solid #999;
+        }
+
+        @media all and (min-width: 768px) {
+            .col-md-1 {
+                width: 8.33333%;
+            }
+
+            .col-md-2 {
+                width: 16.66667%;
+            }
+
+            .col-md-3 {
+                width: 25%;
+            }
+
+            .col-md-4 {
+                width: 33.33333%;
+            }
+
+            .col-md-5 {
+                width: 41.66667%;
+            }
+
+            .col-md-6 {
+                width: 50%;
+            }
+
+            .col-md-7 {
+                width: 58.33333%;
+            }
+
+            .col-md-8 {
+                width: 66.66667%;
+            }
+
+            .col-md-9 {
+                width: 75%;
+            }
+
+            .col-md-10 {
+                width: 83.33333%;
+            }
+
+            .col-md-11 {
+                width: 91.66667%;
+            }
+
+            .col-md-12 {
+                width: 100%;
+            }
+        }
+        /*符合多个条件的（在此是width == "768px"）执行排列顺序靠后的一个*/
+        @media all and (max-width: 768px) {
+            .col-sm-1 {
+                width: 8.33333%;
+            }
+
+            .col-sm-2 {
+                width: 16.66667%;
+            }
+
+            .col-sm-3 {
+                width: 25%;
+            }
+
+            .col-sm-4 {
+                width: 33.33333%;
+            }
+
+            .col-sm-5 {
+                width: 41.66667%;
+            }
+
+            .col-sm-6 {
+                width: 50%;
+            }
+
+            .col-sm-7 {
+                width: 58.33333%;
+            }
+
+            .col-sm-8 {
+                width: 66.66667%;
+            }
+
+            .col-sm-9 {
+                width: 75%;
+            }
+
+            .col-sm-10 {
+                width: 83.33333%;
+            }
+
+            .col-sm-11 {
+                width: 91.66667%;
+            }
+
+            .col-sm-12 {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="col-md-4 col-sm-6>"
+            <div class="block"></div>
+        </div>
+        <div class="col-md-4 col-sm-6">
+            <div class="block"></div>
+        </div>
+        <div class="col-md-4 col-sm-12">
+            <div class="block"></div>
+        </div>
+        <div class="col-md-3 col-sm-3">
+            <div class="block"></div>
+        </div>
+        <div class="col-md-6 col-sm-6">
+            <div class="block"></div>
+        </div>
+        <div class="col-md-3 col-sm-3">
+            <div class="block"></div>
+        </div>
+        <div class="col-md-1 col-sm-2">
+            <div class="block"></div>
+        </div>
+        <div class="col-md-1 col-sm-2">
+            <div class="block"></div>
+        </div>
+        <div class="col-md-2 col-sm-8">
+            <div class="block"></div>
+        </div>
+        <div class="col-md-2 col-sm-3">
+            <div class="block"></div>
+        </div>
+        <div class="col-md-6 col-sm-3">
+            <div class="block"></div>
+        </div>
+    </div>
+</body>
+</html>
