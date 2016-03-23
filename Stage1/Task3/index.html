@@ -1,1 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>任务三：三栏式布局 </title>
+    <style type="text/css">
+        body {
+            margin: 0;
+            font-family: 'Microsoft YaHei';
+        }
 
+        div {
+            border: 1px solid #999;
+        }
+
+        h2, h3 {
+            font-family: 'Segoe Script';
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .main {
+            padding: 20px;
+            margin: 20px;
+            background-color: #eee;
+            min-width: 500px;
+        }
+
+            .main:after {
+                content: "";
+                display: block;
+                clear: both;
+            }
+
+        .left {
+            width: 160px;
+            padding: 20px;
+            background-color: #fff;
+            float: left;
+        }
+
+        .right {
+            width: 80px;
+            background-color: #fff;
+            float: right;
+            padding: 0 20px;
+        }
+
+        .middle {
+            padding: 20px;
+            margin: 0 142px 0 222px;
+            background-color: #fff;
+        }
+
+        .left div, .right div {
+            background-color: #eee;
+            width: 80px;
+            height: 80px;
+        }
+
+        .left div {
+            float: left;
+        }
+
+        .right div {
+            margin: 20px 0 20px 0;
+        }
+
+        .left h3 {
+            padding-left: 90px;
+        }
+
+        .middle div {
+            padding: 20px;
+            text-indent: 35px;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="left">
+            <div>
+                <img src="http://image17-c.poco.cn/mypoco/myphoto/20160323/23/17880628420160323231356089_640.jpg?160x160_120" />
+            </div>
+            <h3>Struggle</h3>
+        </div>
+        <div class="right">
+            <div>
+                <img src="http://image17-c.poco.cn/mypoco/myphoto/20160323/23/17880628420160323231118020_640.jpg?160x160_120" />
+            </div>
+            <div>
+                <img src="http://image17-c.poco.cn/mypoco/myphoto/20160323/23/17880628420160323231219070_640.jpg?160x160_130" />
+            </div>
+            <div>
+                <img src="http://image17-c.poco.cn/mypoco/myphoto/20160323/23/17880628420160323231144029_640.jpg?160x160_120" />
+            </div>
+        </div>
+        <div class="middle">
+            <h2>My Team</h2>
+            <div>
+                <p>
+                    快截止报名时才知道有百度前端技术学院这个平台，于是兴冲冲地报名，发现还要组队才能报，
+                    眼看着截止时间快到了，组团申请又不见审批，只好拉了两个朋友凑个数。
+                </p>
+                <p>
+                    我是一名.Net工程师，我的朋友一个是PHP工程师，一个是Android工程师。
+                    然而他们只是凑数的，这种任务交给我一个渣渣搞定就行了。
+                </p>
+                <p>后端工程师的前端修炼之路，我在路上。</p>
+                <img src="http://image17-c.poco.cn/mypoco/myphoto/20160323/23/17880628420160323231451027_640.jpg?600x200_130" />
+            </div>
+        </div>
+
+
+    </div>
+</body>
+</html>
