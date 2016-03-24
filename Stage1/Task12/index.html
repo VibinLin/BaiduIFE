@@ -1,1 +1,231 @@
+<!DOCTYPE html>
 
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        /*------------------------task1------------------------*/
+        table {
+            font-family: "SimHei";
+            font-weight: bold;
+        }
+
+        thead tr {
+            background-color: #000;
+            color: #fff;
+            text-align: left;
+        }
+
+        tbody tr:nth-child(odd) {
+            background-color: #fff;
+        }
+
+        tbody tr:nth-child(even) {
+            background-color: #ccc;
+        }
+
+        tbody tr:nth-child(-n+3) {
+            color: red;
+        }
+        /*------------------------task2------------------------*/
+        #task2 input {
+            width: 150px;
+            transition: width 500ms;
+            -moz-transition: width 500ms;
+            -webkit-transition: width 500ms;
+            -o-transition: width 500ms;
+        }
+
+            #task2 input:focus {
+                width: 200px;
+            }
+
+
+        /*------------------------task3------------------------*/
+        #task3 {
+            margin-top: 30px;
+            border: 1px solid #9cc5ef;
+            width: 300px;
+            height: 200px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        ul {
+            height:100%;
+            width: 300%;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            position: absolute;
+            /*list-style-position: inside;*/
+        }
+
+            ul li {
+                width: 300px;
+                height: 100%;
+                /*list-style-type: none;*/
+                margin: 0;
+                padding: 0;
+                float: left;
+            }
+
+                /*ul li div :target {
+                    z-index: -5;
+                    animation: changePage 500ms linear;
+                }*/
+
+                ul li > div {
+                    width: 100%;
+                    height: 100%;
+                }
+
+        @keyframes changePage {
+            /*from {
+                left: -100%;
+            }
+
+            to {
+                left: 0%;
+            }*/
+        }
+
+        #banner1  {
+            background-color: green;
+        }
+
+        #banner2  { 
+            /*position: absolute;*/
+        }
+
+        .left {
+            width: 50%;
+            height:100%;
+            float:left;
+            background-color: blue;
+        }
+
+        .right {
+            width: 50%;
+            height:100%;
+            float:right;
+            background-color: green;
+        }
+
+        #banner3   {
+            background-color: blue;
+        }
+
+        .index {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            z-index: 100;
+        }
+
+            .index a {
+                display: inline-block;
+                width: 20px;
+                height: 20px;
+                margin-left: 1px;
+                line-height: 20px;
+                opacity: 0.5;
+                background-color: #fff;
+                color: #000;
+                text-align: center;
+                text-decoration:none;
+            }
+    </style>
+</head>
+<body>
+    <div id="task1">
+        <table>
+            <thead>
+                <tr>
+                    <th>排名</th>
+                    <th>网站</th>
+                    <th>热度</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1.</td>
+                    <td>百度前端技术学院</td>
+                    <td>13000</td>
+                </tr>
+                <tr>
+                    <td>2.</td>
+                    <td>百度前端技术学院</td>
+                    <td>12000</td>
+                </tr>
+                <tr>
+                    <td>3.</td>
+                    <td>百度前端技术学院</td>
+                    <td>11000</td>
+                </tr>
+                <tr>
+                    <td>4.</td>
+                    <td>百度前端技术学院</td>
+                    <td>10000</td>
+                </tr>
+                <tr>
+                    <td>5.</td>
+                    <td>百度前端技术学院</td>
+                    <td>9000</td>
+                </tr>
+                <tr>
+                    <td>6.</td>
+                    <td>百度前端技术学院</td>
+                    <td>8000</td>
+                </tr>
+                <tr>
+                    <td>7.</td>
+                    <td>百度前端技术学院</td>
+                    <td>7000</td>
+                </tr>
+                <tr>
+                    <td>8.</td>
+                    <td>百度前端技术学院</td>
+                    <td>6000</td>
+                </tr>
+                <tr>
+                    <td>9.</td>
+                    <td>百度前端技术学院</td>
+                    <td>5000</td>
+                </tr>
+                <tr>
+                    <td>10.</td>
+                    <td>百度前端技术学院</td>
+                    <td>4000</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div id="task2">
+        <input type="text" />
+    </div>
+  <div id="task3">
+        <ul>
+            <li >
+                <div id="banner1"></div>
+            </li>
+            <li>
+                <div  id="banner2">
+                    <div class="left"></div>
+                    <div class="right"></div>
+                </div>
+            </li>
+            <li  >
+                <div  id="banner3"></div>
+            </li>
+        </ul> <br style="display:block;clear:both;"/>
+        <div class="index">
+            <a href="#banner1" id="page1">1</a>
+            <a href="#banner22" id="page2">2</a>
+            <a href="#banner33" id="page3">3</a>
+        </div>
+    </div>
+</body>
+
+</html>
