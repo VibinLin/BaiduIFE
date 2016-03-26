@@ -1,9 +1,8 @@
 <!DOCTYPE html>
-
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<html>
 <head>
     <meta charset="utf-8" />
-    <title></title>
+    <title>任务十二：学习CSS 3的新特性</title>
     <style>
         /*------------------------task1------------------------*/
         table {
@@ -28,23 +27,26 @@
         tbody tr:nth-child(-n+3) {
             color: red;
         }
+
         /*------------------------task2------------------------*/
-        #task2 input {
-            width: 150px;
-            transition: width 500ms;
-            -moz-transition: width 500ms;
-            -webkit-transition: width 500ms;
-            -o-transition: width 500ms;
+        #task2 {
+            margin: 50px 0;
         }
 
-            #task2 input:focus {
-                width: 200px;
+            #task2 input {
+                width: 150px;
+                transition: width 500ms;
+                -moz-transition: width 500ms;
+                -webkit-transition: width 500ms;
+                -o-transition: width 500ms;
             }
 
+                #task2 input:focus {
+                    width: 200px;
+                }
 
         /*------------------------task3------------------------*/
         #task3 {
-            margin-top: 30px;
             border: 1px solid #9cc5ef;
             width: 300px;
             height: 200px;
@@ -52,90 +54,154 @@
             position: relative;
         }
 
-        ul {
-            height:100%;
-            width: 300%;
+        ul, ol, li {
             margin: 0;
             padding: 0;
             list-style: none;
+        }
+
+        ul {
+            height: 100%;
+            width: 300%;
             position: absolute;
-            /*list-style-position: inside;*/
+            animation: autoScroll1 12s infinite 1s;
         }
 
             ul li {
                 width: 300px;
                 height: 100%;
-                /*list-style-type: none;*/
-                margin: 0;
-                padding: 0;
                 float: left;
             }
 
-                /*ul li div :target {
-                    z-index: -5;
-                    animation: changePage 500ms linear;
-                }*/
+        #hid1:target ~ ul {
+            transform: translate(0px);
+            animation: autoScroll1 12s infinite 1s;
+        }
 
-                ul li > div {
-                    width: 100%;
-                    height: 100%;
-                }
+        #hid2:target ~ ul {
+            transform: translate(-300px);
+            animation: autoScroll2 12s infinite 1s;
+        }
 
-        @keyframes changePage {
-            /*from {
-                left: -100%;
+        #hid3:target ~ ul {
+            transform: translate(-600px);
+            animation: autoScroll3 12s infinite 1s;
+        }
+
+        @keyframes autoScroll1 {
+            0% {
+                transform: translate(0px);
             }
 
-            to {
-                left: 0%;
-            }*/
+            33.333% {
+                transform: translate( -300px);
+            }
+
+            66.667% {
+                transform: translate(-600px);
+            }
+
+            100% {
+                transform: translate(0px);
+            }
         }
 
-        #banner1  {
+        @keyframes autoScroll2 {
+            0% {
+                transform: translate( -300px);
+            }
+
+            33.333% {
+                transform: translate( -600px);
+            }
+
+            66.667% {
+                transform: translate(0px);
+            }
+
+            100% {
+                transform: translate(-300px);
+            }
+        }
+
+        @keyframes autoScroll3 {
+            0% {
+                transform: translate(-600px);
+            }
+
+            33.333% {
+                transform: translate( 0px);
+            }
+
+            66.667% {
+                transform: translate(-300px);
+            }
+
+            100% {
+                transform: translate(-600px);
+            }
+        }
+
+        ul li > div {
+            width: 100%;
+            height: 100%;
+        }
+
+        #banner1 > div {
             background-color: green;
         }
 
-        #banner2  { 
-            /*position: absolute;*/
+        #banner2 > div {
         }
 
-        .left {
+        #banner2 .left {
             width: 50%;
-            height:100%;
-            float:left;
+            height: 100%;
+            float: left;
             background-color: blue;
         }
 
-        .right {
+        #banner2 .right {
             width: 50%;
-            height:100%;
-            float:right;
+            height: 100%;
+            float: right;
             background-color: green;
         }
 
-        #banner3   {
+        #banner3 > div {
             background-color: blue;
         }
 
-        .index {
+        ol {
+            width: 64px;
+            height: 20px;
             position: absolute;
             bottom: 0;
             right: 0;
             z-index: 100;
         }
 
-            .index a {
-                display: inline-block;
+            ol li {
                 width: 20px;
                 height: 20px;
-                margin-left: 1px;
                 line-height: 20px;
-                opacity: 0.5;
-                background-color: #fff;
-                color: #000;
+                background-color: #ccc;
                 text-align: center;
-                text-decoration:none;
+                float: left;
             }
+
+                ol li a {
+                    text-decoration: none;
+                    color: #fff;
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+                    font-family: SimHei;
+                }
+
+                ol li:nth-child(2) {
+                    margin: 0 2px;
+                }
     </style>
 </head>
 <body>
@@ -205,27 +271,31 @@
     <div id="task2">
         <input type="text" />
     </div>
-  <div id="task3">
+    <div id="task3">
+        <span id="hid1"></span>
+        <span id="hid2"></span>
+        <span id="hid3"></span>
         <ul>
-            <li >
-                <div id="banner1"></div>
+
+            <li id="banner1">
+                <div></div>
             </li>
-            <li>
-                <div  id="banner2">
+
+            <li id="banner2">
+                <div>
                     <div class="left"></div>
                     <div class="right"></div>
                 </div>
             </li>
-            <li  >
-                <div  id="banner3"></div>
+            <li id="banner3">
+                <div></div>
             </li>
-        </ul> <br style="display:block;clear:both;"/>
-        <div class="index">
-            <a href="#banner1" id="page1">1</a>
-            <a href="#banner22" id="page2">2</a>
-            <a href="#banner33" id="page3">3</a>
-        </div>
+        </ul>
+        <ol>
+            <li><a href="javascript:location.href='/BaiduIFE/task8.html?time='+new Date().getTime()+'#hid1';">1</a></li>
+            <li><a href="javascript:location.href='/BaiduIFE/task8.html?time='+new Date().getTime()+'#hid2';">2</a></li>
+            <li><a href="javascript:location.href='/BaiduIFE/task8.html?time='+new Date().getTime()+'#hid3';">3</a></li>
+        </ol>
     </div>
 </body>
-
 </html>
