@@ -1,0 +1,452 @@
+body, div, p {
+    margin: 0;
+    padding: 0;
+    font-style: normal;
+}
+
+img {
+    border: 0;
+    vertical-align: middle;
+}
+
+body {
+    width: 980px;
+    height: 1386px;
+    margin: 0 auto;
+}
+
+.clear {
+    clear: both;
+}
+
+.main {
+    width: 892px;
+    margin: 0 auto;
+    background-color: #fff;
+    position: relative;
+}
+
+header {
+    height: 61px;
+    border-bottom: 2px solid #938e80;
+    overflow: hidden;
+}
+
+.headside {
+    font-size: 12px;
+    font-family: SimHei;
+    color: #ffffff;
+    float: left;
+    width: 110px;
+    height: 61px;
+    background-color: #d45d5c;
+    padding: 46px 0 2px 5px;
+}
+
+time {
+    font-size: 12px;
+    font-family: SimHei;
+    color: #d45d5c;
+    float: right;
+    margin: 46px 0 2px 0;
+}
+
+footer {
+    clear: both;
+    width: 892px;
+    margin-top: 20px;
+    border-top: 1px solid #938e8c;
+}
+
+.footside {
+    float: right;
+    font-size: 12px;
+    font-family: SimHei;
+    color: #d45d5c;
+}
+
+#sec1st {
+    margin: 30px 0;
+}
+
+    #sec1st .bigPic {
+        width: 641px;
+        height: 301px;
+        background-image: url('http://vibin.com.cn/baiduife/stage1/images/pc1.jpg');
+        float: left;
+    }
+
+.bigPic .pic_left {
+    width: 191px;
+    height: 301px;
+    float: left;
+    background-color: rgba(124,150,77,0.5);
+}
+
+.bigPic .pic_right {
+    width: 191px;
+    height: 301px;
+    float: right;
+    background-color: rgba(226,170,197,0.5);
+}
+
+#sec1st .manyText {
+    width: 203px;
+    height: 301px;
+    border-top: 2px solid #cc8091;
+    float: right;
+    padding: 15px 0;
+}
+
+.manyText > p:nth-child(1), .manyText > p:nth-child(2) {
+    font-size: 18px;
+    color: #000000;
+    font-family: 'Microsoft YaHei';
+    margin: 0;
+    border-bottom: 2px solid black;
+    /*这里如果用下划线首字母尺寸较大下划线也会跟着较大*/
+    /*text-decoration: underline;*/
+}
+
+.manyText > p:nth-child(1) {
+    width: 66px;
+}
+
+.manyText > p:nth-child(2) {
+    width: 127px;
+}
+
+    .manyText > p:nth-child(1)::first-letter, .manyText > p:nth-child(2)::first-letter {
+        font-size: 24px;
+    }
+
+.manyText > p:nth-child(3) {
+    font-size: 12px;
+    font-family: KaiTi;
+    font-style: italic;
+}
+
+    .manyText > p:nth-child(3)::first-letter {
+        text-transform: capitalize;
+    }
+
+.manyText p.bigNum {
+    font-size: 116px;
+    color: #75b86b;
+    font-family: 'Microsoft YaHei';
+    font-style: italic;
+    margin: 0 0 0 -25px;
+}
+
+.text_box {
+    font-family: 'Microsoft YaHei';
+}
+
+    .text_box p {
+        font-size: 55px;
+        color: #cc8091;
+        float: left;
+        line-height: 55px;
+    }
+
+    .text_box div :nth-child(1) {
+        float: left;
+        font-size: 21px;
+        color: #cc8091;
+        line-height: 21px;
+        margin: 16px 80px 0 0;
+    }
+
+    .text_box div :nth-child(2) {
+        font-size: 12px;
+        color: #938e80;
+        line-height: 12px;
+    }
+
+#sec2nd {
+    margin: 30px 0;
+}
+
+    #sec2nd article {
+        margin: 0 20px 0 0;
+        font-size: 12px;
+        color: #231815;
+        opacity: 0.7;
+        font-family: SimSun;
+    }
+
+        #sec2nd article h1 {
+            font-size: 16px;
+            font-weight: bold;
+            text-decoration: underline;
+            margin: 5px 0;
+            font-family: 'Microsoft YaHei';
+        }
+
+
+        #sec2nd article:nth-child(1) {
+            float: left;
+            width: 28%;
+        }
+
+            #sec2nd article:nth-child(1) h1 {
+                color: #418c59;
+            }
+
+            #sec2nd article:nth-child(1) p {
+                line-height: 16px;
+            }
+
+        #sec2nd article:nth-child(2) {
+            float: left;
+            width: 26%;
+        }
+
+            #sec2nd article:nth-child(2) h1 {
+                color: #d2994f;
+            }
+
+            #sec2nd article:nth-child(2) p {
+                line-height: 16px;
+            }
+
+        #sec2nd article:nth-child(3) {
+            float: left;
+            width: 16%;
+        }
+
+            #sec2nd article:nth-child(3) h1 {
+                color: #cc7680;
+            }
+
+            #sec2nd article:nth-child(3) p {
+                margin: 0 0 16px 0;
+            }
+
+    #sec2nd .statistic p {
+        font-family: 'Microsoft YaHei';
+        font-weight: bold;
+    }
+
+    #sec2nd .statistic span {
+        color: #cd4a48;
+        font-style: italic;
+    }
+
+#sec3rd {
+    margin: 30px 0;
+}
+
+    #sec3rd article {
+        width: 415px;
+        overflow: hidden;
+        float: left;
+        font-family: SimHei;
+    }
+
+    #sec3rd .title {
+        margin-right: 25px;
+        border-bottom: 2px solid #000;
+        width: 415px;
+    }
+
+.title p:first-child {
+    float: left;
+    font-size: 42px;
+    font-family: SimHei;
+    color: #11456b;
+    font-style: normal;
+    line-height: 42px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.title p:nth-child(2) {
+    float: left;
+    font-size: 30px;
+    font-family: SimHei;
+    color: #11456b;
+    font-style: normal;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin: 10px 0;
+}
+
+.title p span {
+    font-size: 72px;
+    line-height: 72px;
+    color: #f5e327;
+    font-style: oblique;
+}
+
+#sec3rd .content {
+    margin-top: 25px;
+}
+
+
+    #sec3rd .content span {
+        font-size: 70px;
+        line-height: 70px;
+        color: #f5e327;
+        float: left;
+        font-family: "Microsoft YaHei";
+        margin: 0 6px 0 0;
+    }
+
+    #sec3rd .content .paragraph {
+        text-indent: 2em;
+    }
+
+    #sec3rd .content p {
+        line-height: 16px;
+        font-size: 12px;
+        font-family: "SimSun";
+        color: #767777;
+    }
+
+    #sec3rd .content img {
+        padding: 16px 0 16px 16px;
+        float: right;
+    }
+
+#sec3rd .midPic {
+    width: 458px;
+    height: 275px;
+    background: url('http://vibin.com.cn/baiduife/stage1/images/pc2.jpg');
+    float: right;
+}
+
+    #sec3rd .midPic .midPic_words {
+        width: 458px;
+        height: 61px;
+        margin-top: 214px;
+        background: rgba(97,101,98,0.7);
+        font-family: 'Microsoft YaHei';
+        position: relative;
+    }
+
+.midPic_words p {
+    font-size: 26px;
+    color: white;
+    line-height: 1.7;
+    position: absolute;
+    top: 10px;
+    margin-left: 40px;
+    padding-left: 10px;
+    border-left: 3px solid #72b16a;
+}
+
+.midPic_words span {
+    font-size: 12px;
+    color: #72b16a;
+    margin-left: 10px;
+    font-style: oblique;
+}
+
+.catalog {
+    width: 459px;
+    height: 318px;
+    background: #EAF1CF;
+    margin-top: 30px;
+    float: right;
+    position: relative;
+}
+
+    .catalog > p {
+        font-size: 16px;
+        color: #5a5b5b;
+        margin-left: 30px;
+        margin-top: 20px;
+        position: relative;
+        font-family: SimSun;
+        text-align: left;
+    }
+
+        .catalog > p span {
+            font-size: 12px;
+            font-family: SimSun;
+            font-style: italic;
+            text-align: right;
+        }
+
+.arrow-up {
+    position: absolute;
+    bottom: 0;
+    width: 0;
+    height: 0;
+    margin: 0px 0px 2px -2px;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-bottom: 10px solid darkblue;
+}
+
+.red_block {
+    width: 260px;
+    height: 160px;
+    background: #D55D5C;
+    position: absolute;
+    top: 158px;
+    left: 0;
+}
+
+    .red_block .first_word {
+        font-size: 110px;
+        color: #ffffff;
+        float: left;
+        margin-top: 37px;
+        margin-left: 20px;
+        line-height: 86px;
+        border-right: 2px solid #ffffff;
+        font-family: SimHei;
+    }
+
+    .red_block .second_word {
+        font-size: 21px;
+        font-family: SimHei;
+        font-style: oblique;
+        line-height: 24px;
+        color: #ffffff;
+        margin: 40px 0 0 90px;
+    }
+
+    .red_block .thrid_word {
+        font-size: 12px;
+        font-family: SimHei;
+        color: #ffffff;
+        line-height: 18px;
+        margin-left: 90px;
+        margin-top: 0px;
+    }
+
+.preface {
+    position: relative;
+    float: right;
+    width: 150px;
+    margin-top: 30px;
+    padding: 20px;
+}
+
+    .preface .left_quote {
+        position: absolute;
+        top: 0;
+        left: -20px;
+        font-size: 72px;
+        color: #d45d5c;
+        font-family: SimHei;
+    }
+
+    .preface .right_quote {
+        position: absolute;
+        bottom: -40px;
+        right: 0;
+        font-size: 72px;
+        color: #d45d5c;
+        font-family: SimHei;
+    }
+
+    .preface p {
+        text-indent: 2em;
+        font-family: SimHei;
+        font-style: italic;
+        font-size: 14px;
+    }
