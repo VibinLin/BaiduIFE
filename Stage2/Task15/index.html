@@ -48,14 +48,14 @@
          */
         function getData() {
             var data = [];
-            var listHtmlList = document.getElementById("source").getElementsByTagName("li");
-            for (var i = 0; i < listHtmlList.length; i++) {
-                var num = listHtmlList[i].getElementsByTagName("b")[0].innerText;
-                var text = listHtmlList[i].innerText;
+            var lis = document.getElementById("source").getElementsByTagName("li");
+            for (var i = 0; i < lis.length; i++) {
+                var num = lis[i].getElementsByTagName("b")[0].innerText;
+                var text = lis[i].innerText;
                 //该截取方法考虑到城市名字可能不是两个字以及空气质量分数可能不是两位数
-                var cityName = text.substr(0, text.length - 5 - num.length);
+                var city = text.substr(0, text.length - 5 - num.length);
                 data[i] = [];
-                data[i].push(cityName, num);
+                data[i].push(city, num);
             }
             return data;
         }
