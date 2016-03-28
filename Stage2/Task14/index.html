@@ -25,7 +25,7 @@
         //阿拉伯数字转中文数字 在此只写了简单几个且不做合法性检验，可自行扩展
         function numToChinese(num) {
             var numSets = ["一", "二", "三", "四", "五", "六"];
-            return numSets[num];
+            return numSets[num - 1];
         };
 
         //筛选并排序
@@ -59,7 +59,7 @@
             var length = newData.length;
             var appendStr = "";
             for (var index = 0; index < length; index++) {
-                appendStr += "<li>" + "第" + numToChinese(index) + "名：" + newData[index][0] + "，" + aqiData[index][1] + "</li>";
+                appendStr += "<li>" + "第" + numToChinese(index + 1) + "名：" + newData[index][0] + "，" + aqiData[index][1] + "</li>";
             }
             document.getElementById("aqi-list").innerHTML = appendStr;
         })();
