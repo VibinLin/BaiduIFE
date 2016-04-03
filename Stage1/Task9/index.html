@@ -1,1 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>任务九：使用HTML/CSS实现一个复杂页面</title>
+    <link rel="stylesheet" href="task9.css">
+</head>
+<body>
+    <header>
+        <div class="header-logo"></div>
+        <div class="header-box">
+            <div class="header-login">
+                <span class="icon-login"></span> 
+                <a href="javascript:;">登录</a> 
+            </div>
+            <div class="header-search">
+               <span class="icon-search"></span>
+                <input type="text"> 
+            </div>
+        </div>
+    </header>
+    <div class="container">
+        <aside>
+            <div class="user">
+                <div class="user-info">
+                    <div class="user-photo">
+                        <b></b>
+                    </div>
+                    <a href="javascript:;">
+                        ABC123
+                    </a>
+                </div>
+                <ul class="atten clearfix">
+                    <li class="collections">
+                        <p>110</p>
+                        <span>收藏</span>
+                    </li>
+                    <li class="fans"> 
+                        <p>313</p>
+                        <span>粉丝</span> 
+                    </li>
+                </ul>
+            </div>
+            <div class="user-menu">
+                <dl class="menu-list active">
+                    <dt class="menu-title"> 
+                        <b class="icon-report"></b>
+                        <span>个人报表</span>
+                    </dt>
+                      <dd> 
+                        <dl class="child-tree">
+                            <dt>
+                                <b class="icon-arrow"></b>
+                                <b class="icon-folder"></b>
+                                <span>文件一</span>
+                            </dt> 
+                        </dl>
+                    </dd>
+                    <dd>
+                        <dl class="child-tree">
+                            <dt class="active">
+                                <b class="icon-arrow"></b>
+                                <b class="icon-folder"></b>
+                                <span>文件二</span>
+                            </dt>
+                            <dd class="active">
+                                <b class="icon-file"></b>
+                                <span>文档1</span>
+                            </dd>
+                            <dd>
+                                <b class="icon-file"></b>
+                                <span>文档2</span>
+                            </dd>
+                        </dl>
+                    </dd>
+                    <dd> 
+                        <dl class="child-tree">
+                            <dt>
+                                <b class="icon-arrow"></b>
+                                <b class="icon-folder"></b>
+                                <span>文件三</span>
+                            </dt> 
+                        </dl>
+                    </dd>
+                </dl>
+                <dl class="menu-list">
+                    <dt class="menu-title">
+                        <b class="icon-star"></b>
+                        <span>个人收藏</span>
+                    </dt>
+                </dl>
+                <dl class="menu-list">
+                    <dt class="menu-title">
+                        <b class="icon-share"></b>
+                        <span>我的分享</span>
+                    </dt>
+                </dl>
+                <dl class="menu-list">
+                    <dt class="menu-title">
+                        <b class="icon-star"></b>
+                        <span>图库</span>
+                    </dt>
+                </dl>
+                <dl class="menu-list">
+                    <dt class="menu-title">
+                        <b class="icon-star"></b>
+                        <span>成长记录</span>
+                    </dt>
+                </dl>
+                <dl class="menu-list">
+                    <dt class="menu-title">
+                        <b class="icon-account"></b>
+                        <span>账户信息</span>
+                    </dt>
+                </dl>
+            </div>
+        </aside>
+        <div class="main">
+           <div class="doc-path">
+                <a href="javascript:;">C站</a>/
+                <a href="javascript:;">个人报表</a>/
+                <a href="javascript:;">文件一</a>/ 
+                <a href="javascript:;" class="active">文档一</a>
+            </div>
 
+            <!--待更新-->
+        </div>
+    </div>
+</body>
+</html>
