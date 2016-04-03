@@ -1,0 +1,803 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ul, ol, li {
+    list-style: none;
+}
+
+a, button {
+    cursor: pointer;
+    text-decoration: none;
+}
+
+img {
+    vertical-align: middle;
+}
+
+.active {
+    border-bottom: 3px solid red;
+    color: #E74F4D;
+}
+
+header {
+    height: 60px;
+    position: relative;
+    font-family: SimHei;
+    padding: 0 60px;
+    margin: 0 0 4px 0;
+    line-height: 60px;
+}
+
+    header a.logo {
+        display: inline-block;
+        height: 100%;
+        font-size: 25px;
+    }
+
+    header a img {
+        height: 30px;
+    }
+
+    header nav {
+        float: right;
+    }
+
+        header nav ul {
+            height: 100%;
+        }
+
+            header nav ul li {
+                display: inline-block;
+            }
+
+                header nav ul li a {
+                    display: block;
+                    font-size: 16px;
+                    padding: 0 20px;
+                    text-align: center;
+                }
+
+    header a.login {
+        display: inline-block;
+        font-size: 16px;
+        color: #E74F4D;
+        float: right;
+    }
+
+.login img {
+    height: 22px;
+}
+
+#sec1st {
+    height: 650px;
+    background-image: url("http://vibin.com.cn/baiduife/stage1/images/task7/pic01.jpg");
+    background-size: cover;
+}
+
+    #sec1st div {
+        position: absolute;
+        top: 270px;
+        left: 120px;
+        color: #fff;
+        font-family: SimHei;
+    }
+
+        #sec1st div h1 {
+            font-family: Arial;
+            font-size: 60px;
+            margin-bottom: 20px;
+            letter-spacing: 3px;
+        }
+
+            #sec1st div h1::first-letter {
+                text-transform: uppercase;
+            }
+
+        #sec1st div p {
+            font-size: 22px;
+        }
+
+            #sec1st div p:nth-child(3) {
+                margin-bottom: 60px;
+                letter-spacing: 0px;
+            }
+
+        #sec1st div button {
+            width: 300px;
+            height: 60px;
+            border: none;
+            line-height: 60px;
+            text-align: center;
+            font-size: 30px;
+            color: #fff;
+            background: #E53C3C;
+            font-family: SimHei;
+        }
+
+#sec2nd ul {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+    #sec2nd ul li {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        height: 250px;
+        width: 25%;
+        text-align: center;
+    }
+
+        #sec2nd ul li span {
+            width: 100%;
+            font-family: SimHei;
+            font-size: 14px;
+            color: #777;
+            padding: 0 88px;
+            margin-top: -120px;
+        }
+
+        #sec2nd ul li:nth-child(-n+3) span {
+            border-right: 2px #ccc solid;
+        }
+
+#sec3rd {
+    width: 100%;
+    height: 360px;
+    background: #EDEAEA;
+    text-align: center;
+    font-size: 50px;
+    color: #aaa;
+    font-family: SimHei;
+}
+
+    #sec3rd div {
+        padding: 88px 0 40px 0;
+    }
+
+        #sec3rd div img {
+            width: 93px;
+            height: 93px;
+        }
+
+#sec4th {
+    width: 100%;
+    height: 340px;
+    text-align: center;
+    background: url("http://vibin.com.cn/baiduife/stage1/images/task7/pic02.jpg");
+    background-size: cover;
+}
+
+    #sec4th > div:first-child {
+        padding: 50px 0 50px 0;
+        font-family: SimHei;
+        color: #fff;
+    }
+
+        #sec4th > div:first-child p:first-child {
+            font-size: 22px;
+            padding-bottom: 10px;
+        }
+
+        #sec4th > div:first-child p:last-child {
+            font-size: 14px;
+        }
+
+        #sec4th > div:first-child span {
+            display: inline-block;
+            width: 30px;
+            height: 20px;
+            border-top: 2px solid #fff;
+        }
+
+    #sec4th > div:last-child {
+        margin: 0 120px;
+        height: 36px;
+        position: relative;
+    }
+
+        #sec4th > div:last-child button {
+            width: 240px;
+            height: 36px;
+            line-height: 36px;
+            font-size: 16px;
+            margin: 0 10px;
+            border: 0;
+            outline: 0;
+            background-color: #BE4F48;
+            color: #fff;
+            letter-spacing: 20px;
+            display: inline-block;
+            cursor: pointer;
+            position: relative;
+            top: -12px;
+        }
+
+    #sec4th input[name=Area] {
+        width: 240px;
+        height: 100%;
+        margin: 0 10px;
+        cursor: pointer;
+        opacity: 0;
+        display: inline-block;
+        position: relative;
+        top: 0;
+    }
+
+    #sec4th > div:last-child > div {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    #sec4th .select {
+        width: 240px;
+        height: 100%;
+        margin: 0 10px;
+        font-size: 14px;
+        line-height: 36px;
+        text-align: left;
+        color: #B3B3B3;
+        display: inline-block;
+        position: relative;
+        top: -12px;
+        box-sizing: border-box;
+        border: 1px solid #C6B3AF;
+        background: #fff url("http://vibin.com.cn/baiduife/stage1/images/task7/icon07.png") no-repeat 210px 8px;
+        background-size: 20px;
+    }
+
+
+        #sec4th .select .option {
+            width: 240px;
+            background-color: #E3E3E5;
+            position: absolute;
+            z-index: 10;
+            display: none;
+            left: -2px;
+            top: 34px;
+        }
+
+            #sec4th .select .option.selected {
+                display: block;
+            }
+
+            #sec4th .select .option ul {
+                margin: 0;
+                padding: 0;
+                width: 240px;
+                box-sizing: border-box;
+                border: 2px solid #AE7271;
+                border-top-width: 0;
+            }
+
+                #sec4th .select .option ul li {
+                    height: 32px;
+                    line-height: 32px;
+                    text-align: left;
+                    padding-left: 40px;
+                    list-style: none;
+                    cursor: pointer;
+                }
+
+    #sec4th .search {
+        width: 240px;
+        height: 36px;
+        margin: 0 10px;
+        font-size: 14px;
+        line-height: 36px;
+        text-align: left;
+        color: #B3B3B3;
+        display: inline-block;
+        position: relative;
+        box-sizing: border-box;
+        cursor: pointer;
+    }
+
+    #sec4th .select .option ul li:hover {
+        background: #BF4E48 url("http://vibin.com.cn/baiduife/stage1/images/task7/icon08.png") no-repeat 10px 8px;
+        background-size: 20px;
+        color: #fff;
+    }
+
+#sec5th {
+    height: 600px;
+    width: 100%;
+    background-color: #EDEAEA;
+    text-align: center;
+    padding: 100px 150px 115px 150px;
+}
+
+    #sec5th figure {
+        border: none;
+        padding: 0 18px;
+        width: 25%;
+        float: left;
+        font-family: 'Microsoft YaHei';
+    }
+
+        #sec5th figure img {
+            width: 100%;
+            height: 340px;
+        }
+
+        #sec5th figure figcaption {
+            width: 100%;
+        }
+
+            #sec5th figure figcaption p:first-child {
+                font-size: 16px;
+                color: #44403F;
+                margin: 10px 0;
+            }
+
+        #sec5th figure.picked figcaption p:first-child {
+            font-size: 24px;
+            letter-spacing: 20px;
+            text-indent: 15px;
+            margin: 5px 0;
+        }
+
+        #sec5th figure figcaption p:last-child {
+            font-size: 12px;
+            color: #B3AFAC;
+            margin: 0 0 6px 0;
+        }
+
+#sec6th {
+    width: 100%;
+    height: 560px;
+}
+
+    #sec6th .sec6_left {
+        width: 68%;
+        height: 560px;
+        float: left;
+        position: relative;
+        background: url("http://vibin.com.cn/baiduife/stage1/images/task7/pic07.jpg") no-repeat;
+        background-size: cover;
+    }
+
+        #sec6th .sec6_left::after {
+            content: '';
+            position: absolute;
+            border-width: 20px;
+            border-style: solid;
+            border-color: transparent #fff transparent transparent;
+            top: 260px;
+            left: 100%;
+            margin-left: -40px;
+        }
+
+        #sec6th .sec6_left .words {
+            color: #fff;
+            text-align: center;
+            width: 500px;
+            height: 300px;
+            margin: 0 auto;
+            position: relative;
+            top: 130px;
+            font-family: 'Microsoft YaHei';
+        }
+
+    #sec6th .words p:nth-child(1) {
+        font-size: 50px;
+        height: 50px;
+        line-height: 50px;
+        margin-bottom: 0px;
+    }
+
+    #sec6th .words p:nth-child(2) {
+        font-size: 150px;
+        height: 150px;
+        line-height: 150px;
+    }
+
+    #sec6th .words p:nth-child(n+3) {
+        font-size: 30px;
+        margin: 0;
+        height: 30px;
+        line-height: 30px;
+        margin-bottom: 20px;
+    }
+
+    #sec6th .sec6_right {
+        height: 560px;
+        margin-left: 68%;
+        text-align: center;
+    }
+
+        #sec6th .sec6_right .wrapper {
+            width: 300px;
+            height: 300px;
+            margin: 0 auto;
+            position: relative;
+            top: 130px;
+        }
+
+            #sec6th .sec6_right .wrapper > div:first-child p {
+                text-align: left;
+                font-size: 10px;
+                color: #B3AFAC;
+                margin-bottom: 16px;
+            }
+
+            #sec6th .sec6_right .wrapper > div:nth-child(2) {
+                width: 100px;
+                height: 35px;
+                font-size: 13px;
+                display: inline-block;
+                line-height: 35px;
+                border: 1px solid #BE4F48;
+                color: #BE4F48;
+                background-color: #fff;
+                cursor: pointer;
+                margin: 35px 0 25px 0;
+            }
+
+            #sec6th .sec6_right .wrapper h1 {
+                width: 100px;
+                font-size: 20px;
+                font-weight: 700;
+                margin: 0 auto 30px;
+                text-align: center;
+                font-family: 'Microsoft YaHei';
+            }
+
+                #sec6th .sec6_right .wrapper h1 span {
+                    color: #BE4F48;
+                }
+
+    #sec6th input[name=page] {
+        cursor: pointer;
+    }
+
+#sec7th {
+    width: 100%;
+    height: 520px;
+}
+
+    #sec7th .wrapper {
+        width: 68%;
+        height: 520px;
+        float: left;
+        font-family: SimHei;
+    }
+
+        #sec7th .wrapper .cell {
+            float: left;
+            width: 50%;
+            height: 520px;
+            font-size: 22px;
+            text-align: center;
+            position: relative;
+        }
+
+            #sec7th .wrapper .cell:first-child {
+                background-color: #E84E4C;
+                color: #fff;
+            }
+
+    #sec7th .img {
+        height: 520px;
+        margin-left: 68%;
+        background: url("http://vibin.com.cn/baiduife/stage1/images/task7/pic08.jpg") no-repeat;
+        background-size: cover;
+    }
+
+    #sec7th .wrapper .cell:last-child::after {
+        content: '';
+        position: absolute;
+        border-width: 20px;
+        border-color: transparent transparent transparent #fff;
+        border-style: solid;
+        top: 240px;
+        left: 100%;
+    }
+
+
+
+    #sec7th .wrapper .cell div:first-child {
+        position: relative;
+        top: 170px;
+        height: 100px;
+    }
+
+        #sec7th .wrapper .cell div:first-child p {
+            margin: 0 0 10px 0;
+        }
+
+    #sec7th .wrapper .cell:first-child div:first-child span {
+        border-top: 2px solid #fff;
+        display: inline-block;
+        width: 30px;
+        height: 20px;
+        margin: 10px;
+    }
+
+    #sec7th .wrapper .cell:nth-child(2) div:first-child span {
+        border-top: 2px solid #000;
+        display: inline-block;
+        width: 30px;
+        height: 20px;
+        margin: 10px;
+    }
+
+    #sec7th .wrapper .cell:first-child .more {
+        width: 150px;
+        height: 40px;
+        display: inline-block;
+        line-height: 40px;
+        border: 1px solid;
+        position: relative;
+        top: 190px;
+        cursor: pointer;
+    }
+
+    #sec7th .wrapper .cell:nth-child(2) .more {
+        width: 150px;
+        height: 40px;
+        display: inline-block;
+        line-height: 40px;
+        border: 1px solid #E84E4C;
+        color: #E84E4C;
+        position: relative;
+        top: 190px;
+        cursor: pointer;
+    }
+
+#sec8th {
+    width: 100%;
+    height: 700px;
+    text-align: center;
+    font-family: SimHei;
+}
+
+    #sec8th .sec8_top {
+        width: 100%;
+        height: 200px;
+        text-align: center;
+        margin: 100px 0 0 0;
+    }
+
+        #sec8th .sec8_top h1 {
+            font-size: 18px;
+        }
+
+        #sec8th .sec8_top span {
+            color: #fff;
+            display: inline-block;
+            width: 30px;
+            height: 25px;
+            margin: 10px;
+            border-top: 2px solid #E44F4B;
+        }
+
+        #sec8th .sec8_top p {
+            font-size: 14px;
+            color: #bbb;
+        }
+
+    #sec8th .sec8_left {
+        width: 25%;
+        height: 400px;
+        display: inline-block;
+        font-size: 20px;
+        text-align: left;
+        top: -62px;
+        position: relative;
+    }
+
+        #sec8th .sec8_left > div {
+            width: 290px;
+            height: 130px;
+        }
+
+            #sec8th .sec8_left > div:first-child {
+                padding: 12px 0 0 0;
+            }
+
+            #sec8th .sec8_left > div h1 {
+                font-size: 14px;
+                color: #666;
+                margin: 0 0 27px 0;
+            }
+
+            #sec8th .sec8_left > div p {
+                font-size: 12px;
+                color: #B3AFAC;
+                line-height: 20px;
+                font-family: SimSun;
+            }
+
+            #sec8th .sec8_left > div span {
+                font-size: 12px;
+                color: #B3AFAC;
+                float: right;
+                cursor: pointer;
+            }
+
+                #sec8th .sec8_left > div span label {
+                    display: inline-block;
+                    transform: rotate(90deg);
+                    -ms-transform: rotate(90deg); /* Internet Explorer 9*/
+                    -moz-transform: rotate(90deg); /* Firefox */
+                    -webkit-transform: rotate(90deg); /* Safari 和 Chrome */
+                    -o-transform: rotate(90deg); /* Opera */
+                    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=1);
+                }
+
+    #sec8th .sec8_right {
+        width: 700px;
+        height: 400px;
+        display: inline-block;
+        font-size: 12px;
+        text-align: center;
+    }
+
+        #sec8th .sec8_right input[type="text"] {
+            height: 40px;
+            width: 300px;
+            margin: 10px 5px 10px 10px;
+            padding: 10px;
+            border: 0;
+            outline: 0;
+            background-color: #E3E3E3;
+        }
+
+        #sec8th .sec8_right textarea {
+            width: 620px;
+            height: 160px;
+            margin: 10px;
+            padding: 10px;
+            border: 0;
+            outline: 0;
+            background-color: #E3E3E3;
+            resize: none;
+        }
+
+        #sec8th .sec8_right input[type="submit"] {
+            width: 620px;
+            height: 40px;
+            font-size: 14px;
+            color: #333;
+            text-align: center;
+            margin: 10px;
+            border: 0;
+            outline: 0;
+            background-color: #E3E3E3;
+        }
+
+#sec9th {
+    width: 100%;
+    height: 400px;
+    text-align: center;
+    background-color: #33363F;
+}
+
+    #sec9th .contact {
+        width: 100%;
+        height: 150px;
+        color: #F7F8FC;
+        display: inline-block;
+        margin-top: 80px;
+    }
+
+        #sec9th .contact p:first-child {
+            font-size: 20px;
+            margin: 20px;
+            font-family: SimHei;
+        }
+
+        #sec9th .contact p:last-child {
+            font-size: 12px;
+            color: #eee;
+        }
+
+    #sec9th .text {
+        width: 100%;
+        height: 40px;
+        display: inline-block;
+        font-size: 0;
+    }
+
+        #sec9th .text input[type="email"] {
+            width: 500px;
+            height: 40px;
+            font-size: 15px;
+            box-sizing: border-box;
+            padding-left: 10px;
+            color: #75757F;
+        }
+
+        #sec9th .text input[type="submit"] {
+            width: 100px;
+            height: 40px;
+            font-size: 16px;
+            color: #fff;
+            letter-spacing: 5px;
+            border: 0;
+            box-sizing: border-box;
+            background-color: #75757F;
+        }
+
+    #sec9th .icon {
+        width: 100%;
+        height: 50px;
+        color: #fff;
+        font-size: 30px;
+        display: inline-block;
+        position: relative;
+        top: 30px;
+    }
+
+        #sec9th .icon i {
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            line-height: 50px;
+            vertical-align: middle;
+            margin: 0;
+            cursor: pointer;
+        }
+
+.font {
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.font-qq:before {
+    content: "\f1d6";
+}
+
+.font-weibo:before {
+    content: "\f18a";
+}
+
+.font-twitter:before {
+    content: "\f099";
+}
+
+.font-globe:before {
+    content: "\f0ac";
+}
+
+footer {
+    width: 100%;
+    height: 60px;
+    text-align: center;
+    background-color: #30303A;
+    text-rendering: auto;
+}
+
+    footer .trademark, footer .back {
+        width: 300px;
+        height: 60px;
+        line-height: 60px;
+        text-align: center;
+        color: #fff;
+        font-size: 10px;
+        font-family: SimHei;
+    }
+
+    footer .trademark {
+        float: left;
+    }
+
+    footer .back {
+        float: right;
+    }
+
+        footer .back a {
+            color: #fff;
+        }
