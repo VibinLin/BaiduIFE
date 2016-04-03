@@ -1,0 +1,320 @@
+* {
+    margin: 0;
+    padding: 0;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body {
+    font: 12px/1.5 Microsoft YaHei,arial,sans-serif,'宋体';
+}
+
+ul, ol, li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.clearfix {
+    *zoom: 1;
+}
+
+    .clearfix:before, .clearfix:after {
+        content: '';
+        display: table;
+    }
+
+    .clearfix:after {
+        clear: both;
+        overflow: hidden;
+    }
+
+[class^='icon'] {
+    display: inline-block;
+    background: url(http://vibin.com.cn/baiduife/stage1/images/task9/sprite.png) no-repeat;
+}
+
+/*header*/
+header {
+    height: 55px;
+    background-color: #2080ff;
+    position: relative;
+}
+
+    header .header-logo {
+        position: absolute;
+        top: 10px;
+        left: 50px;
+        height: 35px;
+        width: 35px;
+        background: #fff;
+    }
+
+        header .header-logo:after {
+            content: '';
+            position: absolute;
+            top: 17.5px;
+            left: 17.5px;
+            height: 14.5px;
+            width: 14.5px;
+            background: #fff;
+            border: 3px solid #2080ff;
+        }
+
+    header .header-box {
+        position: absolute;
+        top: 12px;
+        right: 100px;
+    }
+
+.header-box .header-login {
+    padding-left: 14px;
+    padding-top: 3px;
+    float: right;
+}
+
+.header-login .icon-login {
+    width: 18px;
+    height: 18px;
+    background-position: -11px -819px;
+}
+
+.header-box .header-login a {
+    color: #fff;
+}
+
+.header-box .header-search {
+    float: right;
+    position: relative;
+}
+
+.header-search .icon-search {
+    position: absolute;
+    left: 10px;
+    top: 5px;
+    transition: .2s all ease-out;
+    width: 20px;
+    height: 20px;
+    background-position: -9px -738px;
+}
+
+.header-search input {
+    border: none;
+    height: 30px;
+    line-height: 30px;
+    border-radius: 50px;
+    padding: 0 10px 0 40px;
+    width: 170px;
+    transition: .2s width ease-out;
+}
+
+    .header-search input:focus {
+        width: 310px;
+    }
+
+/*container*/
+.container {
+    position: absolute;
+    top: 55px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+/*aside*/
+aside {
+    float: left;
+    position: relative;
+    width: 260px;
+    height: 100%;
+    background: #2a2e3d;
+}
+
+    aside .user {
+        height: 150px;
+    }
+
+    aside .user-info {
+        height: 90px;
+    }
+
+        aside .user-info .user-photo {
+            position: absolute;
+            left: 55px;
+            top: 16px;
+            height: 56px;
+            width: 56px;
+            border: 1px solid #b2aaad;
+            border-radius: 50%;
+        }
+
+        aside .user-info b {
+            width: 50px;
+            height: 50px;
+            background: #b2aaad;
+            display: block;
+            border-radius: 50%;
+            margin-left: 2px;
+            margin-top: 2px;
+        }
+
+        aside .user-info a {
+            line-height: 90px;
+            font-size: 18px;
+            padding-left: 130px;
+            color: #f6f5f5;
+        }
+
+    aside .atten li {
+        float: left;
+        width: 50%;
+        color: #6e8095;
+        height: 30px;
+        box-sizing: border-box;
+    }
+
+        aside .atten li.collections {
+            text-align: right;
+            padding-right: 30px;
+        }
+
+        aside .atten li.fans {
+            margin-left: -1px;
+            border-left: 1px solid #313645;
+            padding-left: 30px;
+        }
+
+    aside .user-menu {
+        position: absolute;
+        top: 150px;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        overflow: hidden;
+        overflow-y: auto;
+    }
+
+    aside .menu-list {
+        padding: 5px 0 5px 45px;
+        color: #6e8095;
+    }
+
+        aside .menu-list dt, aside .menu-list dd {
+            cursor: pointer;
+            line-height: 28px;
+        }
+
+        aside .menu-list b {
+            opacity: .5;
+        }
+
+        aside .menu-list:hover, aside .menu-list.active {
+            background: #383d4e;
+        }
+
+            aside .menu-list:hover .menu-title, aside .menu-list.active .menu-title {
+                color: #fff;
+            }
+
+                aside .menu-list:hover .menu-title b, aside .menu-list.active .menu-title b {
+                    opacity: 1;
+                }
+
+        aside .menu-list .child-tree > dt {
+            padding-left: 18px;
+        }
+
+            aside .menu-list .child-tree > dt .icon-arrow {
+                transition: .2s all ease;
+            }
+
+            aside .menu-list .child-tree > dt:hover, aside .menu-list .child-tree > dt.active {
+                color: #fff;
+            }
+
+                aside .menu-list .child-tree > dt:hover .icon-folder,
+                aside .menu-list .child-tree > dt:hover .icon-arrow, aside .menu-list .child-tree > dt.active .icon-folder,
+                aside .menu-list .child-tree > dt.active .icon-arrow {
+                    opacity: 1;
+                }
+
+                aside .menu-list .child-tree > dt:hover .icon-arrow, aside .menu-list .child-tree > dt.active .icon-arrow {
+                    transform: rotate(90deg);
+                }
+
+        aside .menu-list .child-tree > dd {
+            padding-left: 60px;
+        }
+
+            aside .menu-list .child-tree > dd:hover, aside .menu-list .child-tree > dd.active {
+                color: #fff;
+            }
+
+                aside .menu-list .child-tree > dd:hover .icon-file, aside .menu-list .child-tree > dd.active .icon-file {
+                    opacity: 1;
+                }
+
+.icon-report {
+    background-position: -7px -11px;
+}
+
+.icon-arrow {
+    background-position: -7px -528px;
+}
+
+.icon-folder {
+    background-position: -7px -52px;
+}
+
+.icon-file {
+    background-position: -7px -93px;
+}
+
+.icon-star {
+    background-position: -7px -133px;
+}
+
+.icon-share {
+    background-position: -7px -170px;
+}
+
+.icon-account {
+    background-position: -7px -212px;
+}
+
+.icon-report, .icon-arrow, .icon-folder, .icon-file, .icon-star, .icon-share, .icon-account {
+    position: relative;
+    top: 1px;
+    width: 18px;
+    height: 14px;
+}
+
+/*main*/
+.main {
+    position: relative;
+    height: 100%;
+    overflow: hidden;
+}
+
+.doc-path {
+    height: 30px;
+    line-height: 30px;
+    font-size: 12px;
+    background: #fff;
+    color: #aaa;
+    padding: 0 30px;
+}
+
+    .doc-path > a {
+        color: #aaa;
+        padding: 0 5px;
+    }
+
+        .doc-path > a:hover, .doc-path > a.active {
+            color: #2189bf;
+        }
+        /*content*/
+        /*待更新*/
