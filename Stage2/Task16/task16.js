@@ -114,7 +114,7 @@ function delegateEvent(element, tag, event, handler) {
         var event = arguments[0] || window.event;
         var target = event.target || event.srcElement;
         if (target && target.nodeName.toUpperCase() === tag.toUpperCase()) {
-            handler.call(target, event);
+            handler.call(target);
         }
     });
 
