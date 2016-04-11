@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>任务十八：基础JavaScript练习（一）</title>
+    <style>
+        button {
+            margin-right: 5px;
+        }
+
+        ul, li {
+            list-style: none;
+            display: inline-block;
+        }
+
+        li {
+            background-color: red;
+            font-family: SimHei;
+            padding: 10px;
+            color: #fff;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <input type="text" />
+        <button value="left_in">左侧入</button>
+        <button value="right_in">右侧入</button>
+        <button value="left_out">左侧出</button>
+        <button value="right_out">右侧出</button>
+    </div>
+    <ul></ul>
+</body>
+</html>
+<script>
+    window.onload = function () {
+        var div = document.getElementsByTagName("div")[0],
+            ul = document.getElementsByTagName("ul")[0];
+        //定义队列对象
+        var queue = {
+            numArr: [],
+            isEmpty: function () {
+                return (this.numArr.length == 0);
+            },
+            leftIn: function (num) {
+                this.numArr.unshift(num);
+                return this;
+            },
+
+            rightIn: function (num) {
+                this.numArr.push(num);
+                return this;
+            },
+
+            leftOut: function () {
+                if (!this.isEmpty()) {
+                    this.numArr.shift();
+                    return this;
+                }
+                else {
+                    alert("队列没有数字了!");
+                }
+            },
+
+            rightOut: function () {
+                if (!this.isEmpty()) {
+                    this.numArr.pop();
+                    return this;
+                }
+                else {
+                    alert("队列没有数字了!");
+                }
+            },
+
+            paint: function (element) {
+                var html = "";
+                this.numArr.map(function (item) {
+                    html += ("<li>" + parseInt(item) + "</li>");
+                });
+                element.innerHTML = html;
+                return this;
+            },
+
+            remove: function (index) {
+                this.numArr.splice(index, 1);
+                return this;
+            }
+        }
+        inOutDelegate(div, "button", "click", queue, ul);
+        removeDelegate(ul, "li", "click", queue)
+    }
+
+    /**
+    * 获取子元素在父元素当中的索引
+    */
+    function getIndex(thisElement, tag, parentElement) {
+        parentElement = parentElement || window.document;
+        tag = tag || "*";
+        var elements = parentElement.getElementsByTagName(tag);
+        var index = 0, length = elements.length;
+        for (index; index < length; index++) {
+            if (elements[index] === thisElement) {
+                break;
+            }
+            if (index == length - 1) { index = -1; }
+        }
+        return index;
+    }
+    /**
+    * 添加事件
+    */
+    function addEvent(element, event, handler) {
+        if (element.addEventListener) {
+            element.addEventListener(event, handler, false);
+        } else if (element.attachEvent) {
+            element.attachEvent("on" + event, handler);
+        } else {
+            element["on" + event] = handler;
+        }
+    }
+
+    /**
+     * 队列进出事件代理
+     */
+    function inOutDelegate(element, tag, event, queue, ulElement) {
+        addEvent(element, event, function () {
+            var event = arguments[0] || window.event;
+            var target = event.target || event.srcElement;
+            if (target && target.nodeName.toUpperCase() === tag.toUpperCase()) {
+                var num = element.firstElementChild.value;
+                if (target.value == "left_in" || target.value == "right_in") {
+                    if (!(/^[0-9]+$/).test(num)) {
+                        alert("请输入一个整数!");
+                        return;
+                    } else {
+                        num = parseInt(num);
+                    }
+                }
+                switch (target.value) {
+                    case "left_in":
+                        queue.leftIn(num);
+                        break;
+                    case "right_in":
+                        queue.rightIn(num);
+                        break;
+                    case "left_out": queue.leftOut(num);
+                        break;
+                    case "right_out": queue.rightOut(num);
+                        break;
+                    default:
+                }
+                queue.paint(ulElement);
+            }
+        });
+
+    }
+
+    /**
+     * 删除队列元素事件代理
+     */
+    function removeDelegate(element, tag, event, queue) {
+        addEvent(element, event, function () {
+            var event = arguments[0] || window.event;
+            var target = event.target || event.srcElement;
+            if (target && target.nodeName.toUpperCase() === tag.toUpperCase()) {
+                var index = getIndex(target, "li", element);
+                queue.remove(index).paint(element);
+            }
+        });
+    }
+</script>
