@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>任务十九：基础JavaScript练习（二）</title>
+    <style>
+        button {
+            margin-right: 5px;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 40px;
+        }
+
+        li {
+            display: inline-block;
+            background-color: red;
+            font-family: SimHei;
+            padding: 0;
+            margin: 10px 5px;
+            vertical-align: bottom;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <input type="text" />
+        <button value="left_in">左侧入</button>
+        <button value="right_in">右侧入</button>
+        <button value="left_out">左侧出</button>
+        <button value="right_out">右侧出</button>
+        <button value="sort">排序</button>
+        <button value="generate">随机添加十个数据</button>
+        <button value="clean">清空</button>
+    </div>
+    <ul></ul>
+</body>
+</html>
+<script>
+    window.onload = function () {
+        var div = document.getElementsByTagName("div")[0],
+            ul = document.getElementsByTagName("ul")[0],
+        //定义队列对象
+            queue = {
+            //数字数组
+            numArr: [],
+            //数字排序数组 内部元素是数字数组
+            numSortArr: [],
+            //数组是否为空
+            isEmpty: function (arr) {
+                arr = arr || this.numArr;
+                return (arr.length == 0);
+            },
+            //左侧进
+            leftIn: function (num) {
+                this.numArr.unshift(num);
+                return this;
+            },
+            //右侧进
+            rightIn: function (num) {
+                this.numArr.push(num);
+                return this;
+            },
+            //左侧出
+            leftOut: function () {
+                if (!this.isEmpty()) {
+                    this.numArr.shift();
+                }
+                else {
+                    alert("队列没有数字了！");
+                }
+                return this;
+            },
+            //右侧出
+            rightOut: function () {
+                if (!this.isEmpty()) {
+                    this.numArr.pop();
+                }
+                else {
+                    alert("队列没有数字了！");
+                }
+                return this;
+            },
+            //删除一个数字
+            remove: function (index) {
+                this.numArr.splice(index, 1);
+                return this;
+            },
+            //画图
+            paint: function (element, arr) {
+                var html = "";
+                arr = arr || this.numArr;
+                arr.map(function (item) {
+                    html += ("<li title=" + parseInt(item) + "></li>");
+                });
+                element.innerHTML = html;
+                var liArr = element.getElementsByTagName("li");
+                var liCount = liArr.length;
+                for (var i = 0; i < liCount; i++) {
+                    setHeight(liArr[i], 500, liArr[i].title);
+                    setWidth(element, liArr[i], liCount);
+                }
+                return this;
+            },
+            //画排序过程图
+            paintProcSort: function (element) {
+                if (!this.isEmpty(this.numSortArr)) {
+                    var timer = setInterval((function (queue) {
+                        return function () {
+                            var tempArr = queue.numSortArr.shift() || [];
+                            if (!queue.isEmpty(tempArr)) {
+                                queue.paint(element, tempArr);
+                            } else {
+                                clearInterval(timer);
+                            }
+                        }
+                    })(this), 1000);
+                } else {
+                    if (this.isEmpty())
+                        alert("没有可供排序的队列！");
+                }
+                return this;
+            },
+            //冒泡排序
+            sort: function (element) {
+                var arr = this.numArr, arrLength = this.numArr.length, temp;
+                for (var i = 0; i < arrLength; i++) {
+                    for (var j = 0; j < arr.length - i - 1; j++) {
+                        if (arr[j] > arr[j + 1]) {
+                            temp = arr[j + 1];
+                            arr[j + 1] = arr[j];
+                            arr[j] = temp;
+                            this.numSortArr.push(arr.clone());
+                        }
+                    }
+                }
+                return this;
+            },
+            //添加随机生成的数据
+            generate: function (num) {
+                for (var i = 0; i < num; i++) {
+                    this.numArr.push(parseInt(Math.random() * 90) + 10);
+                }
+                return this;
+            },
+            //清空队列
+            clean: function () {
+                this.numArr = [];
+                return this;
+            }
+        }
+        //操作队列事件代理
+        operateDelegate(div, "button", "click", queue, ul);
+        //删除元素事件代理
+        removeDelegate(ul, "li", "click", queue)
+    }
+    
+    /**
+    * 扩展数组克隆方法
+    */
+    Array.prototype.clone = function () {
+        return this.slice(0);
+    }
+    /**
+    * 验证输入数字合法性
+    */
+    function checkNum(num) {
+        if (!(/^[0-9]+$/).test(num)) {
+            alert("请输入一个整数！");
+            return false;
+        }
+        if (parseInt(num) < 10 || parseInt(num) > 100) {
+            alert("请输入10-100的整数！");
+            return false;
+        }
+        return true;
+    }
+    /**
+    * 检查队列容量
+    */
+    function checkCapacity(queue, max, addCount) {
+        addCount = addCount || 1;
+        if (queue.numArr.length + addCount > max) {
+            alert("队列最多容纳" + max + "个数字，队列装满即止！");
+            //返回此次能继续添加的数字个数
+        }
+        return max - queue.numArr.length;
+    }
+    /**
+   * 获取子元素在父元素当中的索引
+   */
+    function getIndex(thisElement, tag, parentElement) {
+        parentElement = parentElement || window.document;
+        tag = tag || "*";
+        var elements = parentElement.getElementsByTagName(tag);
+        var index = 0, length = elements.length;
+        for (index; index < length; index++) {
+            if (elements[index] === thisElement) {
+                break;
+            }
+            if (index == length - 1) { index = -1; }
+        }
+        return index;
+    }
+    /**
+    * 添加事件
+    */
+    function addEvent(element, event, handler) {
+        if (element.addEventListener) {
+            element.addEventListener(event, handler, false);
+        } else if (element.attachEvent) {
+            element.attachEvent("on" + event, handler);
+        } else {
+            element["on" + event] = handler;
+        }
+    }
+
+    /**
+     * 队列操作事件代理
+     */
+    function operateDelegate(element, tag, event, queue, ulElement) {
+        addEvent(element, event, function () {
+            var event = arguments[0] || window.event;
+            var target = event.target || event.srcElement;
+            if (target && target.nodeName.toUpperCase() === tag.toUpperCase()) {
+                var num = element.firstElementChild.value;
+                if (target.value == "left_in" || target.value == "right_in") {
+                    if (checkNum(num)) {
+                        num = parseInt(num);
+                    } else {
+                        return;
+                    }
+                    if (checkCapacity(queue, 60, 1) < 1) {
+                        return;
+                    }
+                }
+
+                switch (target.value) {
+                    case "left_in":
+                        queue.leftIn(num);
+                        break;
+                    case "right_in":
+                        queue.rightIn(num);
+                        break;
+                    case "left_out":
+                        queue.leftOut(num);
+                        break;
+                    case "right_out":
+                        queue.rightOut(num);
+                        break;
+                    case "sort":
+                        queue.sort(ulElement).paintProcSort(ulElement);
+                        break;
+                    case "generate":
+                        var addCount = checkCapacity(queue, 60, 10);
+                        if (addCount < 1) {
+                            return;
+                        }
+                        queue.generate(addCount > 10 ? 10 : addCount);
+                        break;
+                    case "clean":
+                        queue.clean();
+                        break;
+                    default:
+                }
+                if (target.value != "sort") queue.paint(ulElement);
+                var liArr = ulElement.getElementsByTagName("li");
+                var liCount = liArr.length;
+            }
+        });
+
+    }
+
+    /**
+     * 删除队列元素事件代理
+     */
+    function removeDelegate(element, tag, event, queue) {
+        addEvent(element, event, function () {
+            var event = arguments[0] || window.event;
+            var target = event.target || event.srcElement;
+            if (target && target.nodeName.toUpperCase() === tag.toUpperCase()) {
+                var index = getIndex(target, "li", element);
+                queue.remove(index).paint(element);
+            }
+        });
+    }
+    /**
+    * 设置元素高度
+    */
+    function setHeight(element, baseHeight, num) {
+        element.style.height = baseHeight * num / 100 + "px";
+    }
+    /**
+   * 设置宽度
+   */
+    function setWidth(parentElement, element, rows) {
+        rows = rows < 20 ? 20 : rows;
+        element.style.width = parentElement.clientWidth / rows - 10 + "px";
+    }
+</script>
