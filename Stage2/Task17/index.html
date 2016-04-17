@@ -1,0 +1,59 @@
+<!DOCTYPE>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>任务十七：零基础JavaScript编码（五）</title>
+    <style>
+        .aqi-chart-wrap {
+            width: 1000px;
+            height: 500px;
+            margin: 50px auto;
+            border: 2px groove threedface;
+            position: relative;
+        }
+
+            .aqi-chart-wrap ul, .aqi-chart-wrap ul li {
+                margin: 0;
+                padding: 0;
+                list-style: none;
+            }
+
+            .aqi-chart-wrap ul {
+                bottom: 0;
+                position: absolute;
+            }
+
+                .aqi-chart-wrap ul li {
+                    display: inline-block;
+                    border: 1px solid #fff;
+                    vertical-align: bottom;
+                }
+    </style>
+    <script src="task17.js" charset="gbk"></script>
+</head>
+<body>
+    <fieldset id="form-gra-time">
+        <legend>请选择日期粒度：</legend>
+        <label>日<input name="gra-time" value="day" type="radio" checked="checked"></label>
+        <label>周<input name="gra-time" value="week" type="radio"></label>
+        <label>月<input name="gra-time" value="month" type="radio"></label>
+    </fieldset>
+
+    <fieldset>
+        <legend>请选择查看的城市：</legend>
+        <select id="city-select">
+            <option>北京</option>
+        </select>
+    </fieldset>
+
+    <div class="aqi-chart-wrap">
+        <!--  <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>-->
+    </div>
+</body>
+</html>
